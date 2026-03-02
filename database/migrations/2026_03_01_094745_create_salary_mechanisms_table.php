@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('salary_mechanisms', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->contrained('users')->cascadeOnUpdate()->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->nullable();
             $table->integer('salary')->nullable();
             $table->integer('ot_day')->nullable();
             $table->integer('ot_hour')->nullable();

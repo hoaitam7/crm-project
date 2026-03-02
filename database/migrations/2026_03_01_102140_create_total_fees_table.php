@@ -24,7 +24,6 @@ return new class extends Migration
                 ->constrained('type_fees')
                 ->cascadeOnUpdate()
             ;
-
             $table->foreignId('atm_id')
                 ->nullable()
                 ->constrained('atms')

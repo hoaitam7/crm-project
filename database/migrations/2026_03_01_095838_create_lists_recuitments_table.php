@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lists_recuitments', function (Blueprint $table) {
+        Schema::create('lists_recruitments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recuitment_id')->contrained('recuitments')->cascadeOnUpdate()->nullable();
+            $table->foreignId('recruitment_id')->constrained('recruitments')->cascadeOnUpdate()->nullable();
             $table->dateTime('day');
             $table->date('birthday')->nullable();
             $table->string('phone')->nullable();
             $table->string('name')->nullable();
             $table->unsignedTinyInteger('interview')->default(0)->comment('0:ko , 1:có');
-            $table->foreignId('user_id')->contrained('users')->cascadeOnUpdate()->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->nullable();
             $table->unsignedTinyInteger('result')->default(0)->comment('0:ko đạt , 1:đạt');
             $table->dateTime('day_word')->nullable();
             $table->text('note')->nullable();

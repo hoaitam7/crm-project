@@ -14,9 +14,9 @@ return new class extends Migration
     {
         Schema::create('recruitments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->contrained('users')->cascadeOnUpdate()->nullable();
-            $table->foreignId('part_id')->contrained('parts')->cascadeOnUpdate()->nullable();
-            $table->foreignId('position_id')->contrained('positions')->cascadeOnUpdate()->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->nullable();
+            $table->foreignId('part_id')->constrained('parts')->cascadeOnUpdate()->nullable();
+            $table->foreignId('position_id')->constrained('positions')->cascadeOnUpdate()->nullable();
             $table->integer('number')->nullable();
             $table->unsignedTinyInteger('prioritize')->default(0)->comment('0:thấp, 1: tb, 2: cao');
             $table->dateTime('deadline')->nullable();
